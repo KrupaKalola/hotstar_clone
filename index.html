@@ -1,6 +1,9 @@
 <html>
 
 <head>
+    <!--meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <!--bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,22 +24,56 @@
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">WatchForFree</a>
+                <a class="navbar-brand" href="index.html">WatchForFree</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Tv <span class="sr-only">(current)</span></a>
+                <div class="collapse navbar-collapse my-2" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#">Tv <span
+                                    class="sr-only">(current)</span></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Hotstar Special</a>
+                                <a class="dropdown-item" href="#">Star Plus</a>
+                                <a class="dropdown-item" href="#">Star Jalsha</a>
+                                <a class="dropdown-item" href="#">Star Vijay</a>
+                                <a class="dropdown-item" href="#">Star Bhrat</a>
+                                <a class="dropdown-item" href="#">Life Ok</a>
+                                <a class="dropdown-item" href="#">Asianet</a>
+                                <a class="dropdown-item" href="#">Star Maa</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Movies</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#">Movie <span
+                                    class="sr-only">(current)</span></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Hindi</a>
+                                <a class="dropdown-item" href="#">Bengali</a>
+                                <a class="dropdown-item" href="#">Telugu</a>
+                                <a class="dropdown-item" href="#">Malayalam</a>
+                                <a class="dropdown-item" href="#">Tamil</a>
+                                <a class="dropdown-item" href="#">Marathi</a>
+                                <a class="dropdown-item" href="#">English</a>
+                                <a class="dropdown-item" href="#">Kanada</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sports</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#">Sports <span
+                                    class="sr-only">(current)</span></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Cricket</a>
+                                <a class="dropdown-item" href="#">Football</a>
+                                <a class="dropdown-item" href="#">Wrestling</a>
+                                <a class="dropdown-item" href="#">Badminton</a>
+                                <a class="dropdown-item" href="#">Hockey</a>
+                                <a class="dropdown-item" href="#">eSports</a>
+                                <a class="dropdown-item" href="#">Tennis</a>
+                                <a class="dropdown-item" href="#">Material Art1</a>
+                                <a class="dropdown-item" href="#">Kabbadi</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">News</a>
@@ -47,7 +84,7 @@
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <i class="far fa-user-circle fa-2x" style="color: #919191;"></i>
                     </form>
                 </div>
             </nav>
@@ -64,12 +101,15 @@
                         nulla architecto quam laboriosam mollitia odio! Totam rem, eligendi quam ab non at,
                         voluptate, repellat voluptatibus nulla officia laboriosam. Atque?</p>
                 </div>
-                <div class="specialOps">
-
-                    <div class="image-gradient"
-                        style="background-image: linear-gradient(to right, rgb(57, 22, 17), rgba(0, 0, 0, 0)) !important;">
-
-                    </div>
+                <div class="mainSliderImage" style="background-image: url('image/specialOps.jpg');">
+                    <!-- <div class="mainSliderContentDummy">
+                        <h3>Special Ops</h3>
+                        <p>Hotstar Specials-Hindi-Action</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti consectetur
+                            nulla architecto quam laboriosam mollitia odio! Totam rem, eligendi quam ab non at,
+                            voluptate, repellat voluptatibus nulla officia laboriosam. Atque?</p>
+                    </div> -->
+                    <div class="image-gradient" style="background-image: linear-gradient(to right, rgb(57, 22, 17), rgba(0, 0, 0, 0)) !important;"></div>
                 </div>
             </div>
             <div class="d-flex mx-3" style="background-color: #7d6e24f2;">
@@ -80,9 +120,15 @@
                         nulla architecto quam laboriosam mollitia odio! Totam rem, eligendi quam ab non at,
                         voluptate, repellat voluptatibus nulla officia laboriosam. Atque?</p>
                 </div>
-                <div class="yehRista"
-                    style="background-image: url('image/yeh_rista_kya_kehlata_hai.jpeg');  width: 810px;">
-
+                <div class="mainSliderImage"
+                    style="background-image: url('image/yeh_rista_kya_kehlata_hai.jpeg');">
+                    <div class="mainSliderContentDummy">
+                        <h3>Yeh Rista Kya Kehlata Hai</h3>
+                        <p>Hotstar Specials-Hindi-Action</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti consectetur
+                            nulla architecto quam laboriosam mollitia odio! Totam rem, eligendi quam ab non at,
+                            voluptate, repellat voluptatibus nulla officia laboriosam. Atque?</p>
+                    </div>
                     <div class="image-gradient"
                         style="background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #84752d) !important;">
 
@@ -97,8 +143,14 @@
                         nulla architecto quam laboriosam mollitia odio! Totam rem, eligendi quam ab non at,
                         voluptate, repellat voluptatibus nulla officia laboriosam. Atque?</p>
                 </div>
-                <div class="radhaKrishna" style="background-image: url('image/radha_krishana.jpeg'); width: 810px;  ">
-
+                <div class="mainSliderImage" style="background-image: url('image/radha_krishana.jpeg');">
+                    <div class="mainSliderContentDummy">
+                        <h3>Radhe Krishna</h3>
+                        <p>Hotstar Specials-Hindi-Action</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti consectetur
+                            nulla architecto quam laboriosam mollitia odio! Totam rem, eligendi quam ab non at,
+                            voluptate, repellat voluptatibus nulla officia laboriosam. Atque?</p>
+                    </div>
                     <div class="image-gradient"
                         style="background-image: linear-gradient(to right,#1e4eaa, rgba(0, 0, 0, 0)) !important;">
 
@@ -110,7 +162,7 @@
     <section>
         <div>
             <div class="container">
-                <div class="wrapper my-4">
+                <div class="wrapper mb-4 pt-4">
                     <div class="wrapper-title">
                         <h2><a href="#">Continue Watching</a></h2>
                     </div>
@@ -135,9 +187,154 @@
                         </div>
                     </div>
                 </div>
+                <div class="wrapper my-4">
+                    <div class="wrapper-title">
+                        <h2><a href="#">Watchlist</a></h2>
+                    </div>
+                    <div class="wrapper-body d-flex">
+                        <div class="wrapper-body-content">
+                            <img src="image/specialOps.jpg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/radha_krishana.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/yeh_rista_kya_kehlata_hai.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/tanhaji.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/mohini.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/chhapak.jpeg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrapper my-4">
+                    <div class="wrapper-title">
+                        <h2><a href="#">Top Picks For You</a></h2>
+                    </div>
+                    <div class="wrapper-body d-flex">
+                        <div class="wrapper-body-content">
+                            <img src="image/specialOps.jpg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/radha_krishana.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/yeh_rista_kya_kehlata_hai.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/tanhaji.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/mohini.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/chhapak.jpeg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrapper my-4">
+                    <div class="wrapper-title">
+                        <h2><a href="#">Best of Hotstar VIP</a></h2>
+                    </div>
+                    <div class="wrapper-body d-flex">
+                        <div class="wrapper-body-content">
+                            <img src="image/specialOps.jpg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/radha_krishana.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/yeh_rista_kya_kehlata_hai.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/tanhaji.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/mohini.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/chhapak.jpeg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrapper mt-4">
+                    <div class="wrapper-title">
+                        <h2><a href="#">Popular in Kids</a></h2>
+                    </div>
+                    <div class="wrapper-body d-flex">
+                        <div class="wrapper-body-content">
+                            <img src="image/specialOps.jpg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/radha_krishana.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/yeh_rista_kya_kehlata_hai.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/tanhaji.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/mohini.jpeg">
+                        </div>
+                        <div class="wrapper-body-content">
+                            <img src="image/chhapak.jpeg">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-left col-xs-12 col-sm-12 col-md-7">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">TermsOfUse</a></li>
+                        <li><a href="">Privcy Policy (New)</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Feedback</a></li>
+                        <li><a href="">Careers </a></li>
+                    </ul>
+                    <p class="copyright">
+                        © 2020 STAR. All Rights Reserved. HBO, Home Box Office and all related channel and
+                        programming logos are service marks of, and all related programming visuals and
+                        elements are the property of, Home Box Office, Inc. All rights reserved.
+                    </p>
+                </div>
+                <div class="footer-right col-xs-12 col-sm-12 col-md-5">
+                    <div class="row justify-content-end">
+                        <div class="social-unit col-xs-3">
+                            <div>
+                                <p>Connect with us</p>
+                                <i class="fab fa-facebook-square fa-3x"></i>
+                                <i class="fab fa-twitter-square fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="app-unit col-xs-8 mr-0">
+                            <div>
+                                <p>Hotstar App</p>
+                                <i class="fab fa-google-play fa-3x fa-w-16"></i>
+                                <i class="fab fa-apple fa-3x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <!--bootstrap-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -163,43 +360,86 @@
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 centerMode: true,
-                centerPadding: '60px',
+                centerPadding: '50px',
                 cssEase: 'easeOut',
                 arrows: true,
                 prevArrow: '<i class="fas fa-angle-left"></i>',
                 nextArrow: '<i class="fas fa-angle-right"></i>',
                 autoplay: true,
                 autoplaySpeed: 4500,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings:{
+                            arrows: false,
+                            centerPadding: '30px'
+                        }
+                    }
+
+                ]
             });
         });
         $('.wrapper-body').slick({
-            infinite:false,
+            infinite: true,
             slidesToShow: 5,
             slidesToScroll: 5,
             arrows: true,
-            centerPadding: '60px',
+            centerMode: true,
+            centerPadding: '20px',
             cssEase: 'linear',
-            focusOnSelect:true,
+            focusOnSelect: true,
             prevArrow: '<i class="fas fa-angle-left"></i>',
-            nextArrow: '<i class="fas fa-angle-right"></i>'
+            nextArrow: '<i class="fas fa-angle-right"></i>',
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        arrows: false
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        arrows: false
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
         });
     </script>
 
 
     <script>
-        $(document).ready(function(){
-            $('.wrapper-body-content').hover(function(e){
-                debugger
-                $(e.target).parent().addClass(".opacity");
-                var array = $('.wrapper-body')
-                console.log(array)
-                for(i=0; i<array.length;){
-                    console.log(array[i])
-                    if(!array[i].find('.opacity')){
-                        array[i].attr("opacity", "0.5")
+        $(document).ready(function () {
+            $('.wrapper-body-content').mouseenter(function (e) {
+                var content = (e.target).closest(".wrapper-body")
+                var innerContent = $(content).find($(".wrapper-body-content img"))
+                for (i = 0; i < innerContent.length; i++) {
+                    if (!(innerContent[i] == (e.target))) {
+                        $(innerContent[i]).css('opacity', 0.4);
                     }
                 }
+                // $(".wrapper-body-content img").find('img').css('z-index', 0) 
+                // $(this).find('img').css('opacity', 1); 
+                // $(this).find('img').css('z-index', 1000)                
             })
+                .mouseleave(function () {
+                    $(".wrapper-body-content img").css('opacity', 1);
+                })
+
         })
     </script>
 </body>

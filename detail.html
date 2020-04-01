@@ -95,17 +95,17 @@
             <div class="container">
                 <div class="row movie_wrap justify-content-start">
                     <div class="poster col-lg-4 col-sm-12">
-                        <img src="image/invisibleMan.jpg">
+                        <img src="">
                     </div>
-                    <div class="hearder_poster_wrapper col-lg-6 col-sm-12 pl-4 py-4">
+                    <div class="hearder_poster_wrapper col-lg-6 col-sm-12 pl-4 ">
                         <div class="row">
                             <div class="title col-lg-12">
                                 <h2 style="font-weight: 800;">The Invisible Man</h2>
                             </div>
                             <ul class="list-group list-group-horizontal col-lg-12">
                                 <li>
-                                    <div class="c100 p75 small dark">
-                                        <span>75%</span>
+                                    <div class="rating c100 small dark">
+                                        <span></span>
                                         <div class="slice">
                                             <div class="bar"></div>
                                             <div class="fill"></div>
@@ -127,7 +127,7 @@
                             </ul>
                             <div class="header_info col-lg-12 my-3">
                                 <h4 style="font-weight: 600;">Overview</h4>
-                                <p>When Cecilia's abusive ex takes his own life and leaves her his fortune, she suspects
+                                <p class="overview">When Cecilia's abusive ex takes his own life and leaves her his fortune, she suspects
                                     his death was a hoax. As a series of coincidences turn lethal, Cecilia works to
                                     prove that she is being hunted by someone nobody can see.</p>
                                 <h4 style="font-weight: 600;">Featured Crew</h4>
@@ -254,6 +254,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            var obj = JSON.parse(sessionStorage.getItem('results'))
+            var title = obj.title
+            var rating = obj.vote_average
+            var overview = obj.overview
+            var url = 'http://image.tmdb.org/t/p/w342/' + obj.poster_path
+            console.log(url)
+            $('.poster img').attr('src', url);
+            $('.title h2').text(title);
+            $('.overview').text(overview);
+            $('.rating span').text(rating);
+            var vote= parseInt(rating)*10;
+            $('.rating').addClass('p'+vote);
+            
+        })
+
+    </script>
 </body>
 
 </html>

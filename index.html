@@ -339,12 +339,13 @@
 
     <!--script-->
     <script type="text/javascript">
+    var movieDataObj = []
         $(document).ready(function () {
             $('.mainSlider').slick({
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                centerMode: true,
+                centerMode:true,
                 centerPadding: '50px',
                 cssEase: 'easeOut',
                 arrows: true,
@@ -369,7 +370,6 @@
         //     slidesToShow: 5,
         //     slidesToScroll: 5,
         //     arrows: true,
-        //     centerMode: true,
         //     centerPadding: '20px',
         //     cssEase: 'linear',
         //     focusOnSelect: true,
@@ -404,10 +404,7 @@
         //         // instead of a settings object
         //     ]
         // });
-    </script>
 
-
-    <script>
         $(document).load(function () {
             $('.wrapper-body-content').mouseenter(function (e) {
                 var content = (e.target).closest(".wrapper-body")
@@ -416,34 +413,46 @@
                     if (!(innerContent[i] == (e.target))) {
                         $(innerContent[i]).css('opacity', 0.4);
                     }
-                }
-                // $(".wrapper-body-content img").find('img').css('z-index', 0) 
-                // $(this).find('img').css('opacity', 1); 
-                // $(this).find('img').css('z-index', 1000)                
+                }            
             })
                 .mouseleave(function () {
                     $(".wrapper-body-content img").css('opacity', 1);
                 })
         })
+        $(document).ready(function(){
+            $('.wrapper-body').on('click' , '.wrapper-body-content img', function(e){
+                // var title = e.target.id
+                // var overview= e.target.name;
+                // var url = e.target.src;
+                // sessionStorage.setItem('title',title);
+                // sessionStorage.setItem('overview',overview);
+                // sessionStorage.setItem('url',url);
+                var id = $(this).attr('id');
+
+                var pos = movieDataObj.map(function(item, index) {
+                    return item.id;
+                }).indexOf(parseInt(id));                
+                var results= JSON.stringify(movieDataObj[pos]);               
+                sessionStorage.setItem('results', results)
+                window.location.href=('detail.html')
+            })
+        })
     </script>
 
     <script>
-        function movieDetail(){
-            var id= $(this).attr(id)
-            alert(id)
-        }
 
         function popularMovies() {
             fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=ca0bfb0a7b868689d37d5b26bdc6153d&language=en-US').then(response => {
                 return response.json();
             }).then(data => {
-                console.log(data.results);
                 var dataElement = $('.popular-movie-section');
+                movieDataObj.push(...data.results)
                 data.results.forEach(movie => {
                     if (movie.poster_path) {
                         var url = 'http://image.tmdb.org/t/p/w342/' + movie.poster_path;
+                      
                         var html = '<div class="wrapper-body-content">' +
-                            '<img src=' + url + ' >' +
+                            '<img src=' + url + ' id=' + movie.id + '>'+
                             '</div>'
                         dataElement.append(html);
                     }
@@ -453,7 +462,6 @@
                     slidesToShow: 5,
                     slidesToScroll: 5,
                     arrows: true,
-                    centerMode: true,
                     centerPadding: '20px',
                     cssEase: 'linear',
                     focusOnSelect: true,
@@ -499,13 +507,13 @@
             fetch('https://api.themoviedb.org/3/discover/movie?primary_release_year=2019&sort_by=vote_average.desc&api_key=ca0bfb0a7b868689d37d5b26bdc6153d&language=en-US').then(response => {
                 return response.json();
             }).then(data => {
-                console.log(data.results);
                 var dataElement = $('.bestMovie2019-section');
+                movieDataObj.push(...data.results)
                 data.results.forEach(movie => {
                     if (movie.poster_path) {
                         var url = 'http://image.tmdb.org/t/p/w342/' + movie.poster_path;
                         var html = '<div class="wrapper-body-content">' +
-                            '<img src=' + url + ' >' +
+                            '<img src=' + url + ' id=' + movie.id + '>' +
                             '</div>'
                         dataElement.append(html);
                     }
@@ -515,7 +523,6 @@
                     slidesToShow: 5,
                     slidesToScroll: 5,
                     arrows: true,
-                    centerMode: true,
                     centerPadding: '20px',
                     cssEase: 'linear',
                     focusOnSelect: true,
@@ -561,13 +568,13 @@
             fetch('https://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=ca0bfb0a7b868689d37d5b26bdc6153d&language=en-US').then(response => {
                 return response.json();
             }).then(data => {
-                console.log(data.results);
                 var dataElement = $('.popularInKids-section');
+                movieDataObj.push(...data.results)
                 data.results.forEach(movie => {
-                    if (movie.poster_path) {
+                    if (movie.id && movie.poster_path) {
                         var url = 'http://image.tmdb.org/t/p/w342/' + movie.poster_path;
                         var html = '<div class="wrapper-body-content">' +
-                            '<img src=' + url + ' >' +
+                            '<img src=' + url + ' id=' + movie.id + '>' +
                             '</div>'
                         dataElement.append(html);
                     }
@@ -577,7 +584,6 @@
                     slidesToShow: 5,
                     slidesToScroll: 5,
                     arrows: true,
-                    centerMode: true,
                     centerPadding: '20px',
                     cssEase: 'linear',
                     focusOnSelect: true,
@@ -623,13 +629,14 @@
             fetch('https://api.themoviedb.org/3/discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10&api_key=ca0bfb0a7b868689d37d5b26bdc6153d&language=en-US').then(response => {
                 return response.json();
             }).then(data => {
-                console.log(data.results);
+                movieDataObj.push(...data.results)  
                 var dataElement = $('.bestDrama-section');
                 data.results.forEach(movie => {
                     if (movie.poster_path) {
                         var url = 'http://image.tmdb.org/t/p/w342/' + movie.poster_path;
+                       
                         var html = '<div class="wrapper-body-content">' +
-                            '<img src=' + url + ' >' +
+                            '<img src=' + url + ' id=' + movie.id + '>' +
                             '</div>'
                         dataElement.append(html);
                     }
@@ -639,7 +646,6 @@
                     slidesToShow: 5,
                     slidesToScroll: 5,
                     arrows: true,
-                    centerMode: true,
                     centerPadding: '20px',
                     cssEase: 'linear',
                     focusOnSelect: true,
@@ -685,16 +691,15 @@
             fetch('https://api.themoviedb.org/3/discover/movie?certification_country=US&certification=R&sort_by=vote_average.desc&api_key=ca0bfb0a7b868689d37d5b26bdc6153d&language=en-US').then(response => {
                 return response.json();
             }).then(data => {
-                console.log(data.results);
+                movieDataObj.push(...data.results)
                 var dataElement = $('.highestRatedMovies-section');
                 data.results.forEach(movie => {
-                    var url = 'http://image.tmdb.org/t/p/w342/' + movie.poster_path;
-                        var title = movie.title;
-                        var overview = movie.overview;
+                    
                     if (movie.poster_path) {
+                        var url = 'http://image.tmdb.org/t/p/w342/' + movie.poster_path;
                         
                         var html = '<div class="wrapper-body-content">' +
-                            '<img src=' + url + ' id=' + title + ' name=' + overview + '  onClick = movieDetail()>' +
+                            '<img src=' + url + ' id=' + movie.id + '>' +
                             '</div>'
                         dataElement.append(html);
                     }
@@ -704,7 +709,6 @@
                     slidesToShow: 5,
                     slidesToScroll: 5,
                     arrows: true,
-                    centerMode: true,
                     centerPadding: '20px',
                     cssEase: 'linear',
                     focusOnSelect: true,
